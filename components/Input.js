@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dimensions, StyleSheet, Text, TextInput } from 'react-native';
 
+/* 텍스트 입력*/
 const Input = ({ value, onChangeText, onSubmitEditing}) => {
   return (
     <TextInput 
@@ -16,6 +17,7 @@ const Input = ({ value, onChangeText, onSubmitEditing}) => {
 export default Input;
 
 const styles = StyleSheet.create({
+  /* 텍스트 입력 공간 설정 */
   input: {
     width: Dimensions.get('window').width - 15,
     fontSize: 20,

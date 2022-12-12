@@ -31,19 +31,19 @@ export default function App() {
   const _handleTextChange = (text) => {
     setNewTask(text);
   };
-
+  /* 체크 박스 기능 */
   const _toggleTask = (id) => {
     const currentTasks = Object.assign({}, tasks);
     currentTasks[id]['completed'] = !currentTasks[id]['completed'];
     setTasks(currentTasks);
   };
-
+  /* 삭제 기능 */
   const _deleteTask = (id) => {
     const currentTasks = Object.assign({}, tasks);
     delete currentTasks[id];
     setTasks(currentTasks);
   };
-
+  /* 수정 기능 */
   const _updateTask = (item) => {
     const currentTasks = Object.assign({},tasks);
     currentTasks[item.id]=item;
@@ -51,15 +51,22 @@ export default function App() {
   }
 
   return (
+    /* 전체 공간 */
     <View style = {styles.container}>
+      {/* 여백 */}
       <View style = {styles.subView}></View>
+      {/* 타이틀 공간 */}
       <View style={styles.subView}>
+        {/* 타이틀 테두리 설정 */}
         <View style = {styles.Viewbox}>
           <Title title="Todo List✔️"></Title>
         </View>
       </View>
+      {/* 텍스트 입력창 및 리스트 공간 */}
       <View style={styles.container}>
+        {/* 스테이터스 바 설정 */}
         <StatusBar style="auto" />
+          {/* 텍스트 입력 */}
           <Input
             value={newTask}
             onChangeText={_handleTextChange}
@@ -88,12 +95,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  /* 여백 및 타이틀 공간 설정 */
   subView : {
     flex: 0.2,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#FFD9EC',
   },
+  /* 타이틀 테두리 디자인 */
   Viewbox : {
     borderColor: "#FFB2F5",
     borderStyle: "solid",

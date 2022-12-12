@@ -1,6 +1,7 @@
 import { images } from '../images';
 import {StyleSheet, TouchableOpacity, Image} from 'react-native'
 
+/* 아이콘 입력 이벤트 */
 const IconButton = ({ type, onPressOut, id }) => {
   const _onPressOut = () => {
     onPressOut(id);
